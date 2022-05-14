@@ -15,60 +15,72 @@ public class Employee {
 	
 	
 	private int id;
-	private String firstName;
-	private String lastName;
+	private String fullName;
+	private String ProfiePic;
+	private String gender;
+	private String department;
 	private int salary;
-	private String email;
-	private int moblieNumber;
-	private String startDate;
+	private int startDate;
+	private  String notes;
 	
 
-	public Employee(int id, String firstName, String lastName, int salary, String email, int moblieNumber,
-			String startDate) {
+	
+	
+	public Employee(int id, String fullName, String profiePic, String gender, String department, int salary,
+			int startDate, String notes) {
 		super();
 		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
+		this.fullName = fullName;
+		this.ProfiePic = profiePic;
+		this.gender = gender;
+		this.department = department;
 		this.salary = salary;
-		this.email = email;
-		this.moblieNumber = moblieNumber;
 		this.startDate = startDate;
+		this.notes = notes;
 	}
-	
-	
 	public Employee() {
 		
 	}
 	public Employee(Employee employee) {
 		this.id=employee.id;
-        this.firstName = employee.firstName;
-        this.lastName = employee.lastName;
-        this.salary = employee.salary;
-        this.email = employee.email;
-        this.moblieNumber = employee.moblieNumber;
-        this.startDate = employee.startDate;
+        this.department=employee.department;
+        this.fullName=employee.fullName;
+        this.gender=employee.gender;
+        this.notes=employee.notes;
+        this.salary=employee.salary;
+        this.ProfiePic=employee.ProfiePic;
+        this.startDate=employee.startDate;
         
     }
-
-
-
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getFirstName() {
-		return firstName;
+	public String getFullName() {
+		return fullName;
 	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
 	}
-	public String getLastName() {
-		return lastName;
+	public String getProfiePic() {
+		return ProfiePic;
 	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setProfiePic(String profiePic) {
+		ProfiePic = profiePic;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	public String getDepartment() {
+		return department;
+	}
+	public void setDepartment(String department) {
+		this.department = department;
 	}
 	public int getSalary() {
 		return salary;
@@ -76,26 +88,22 @@ public class Employee {
 	public void setSalary(int salary) {
 		this.salary = salary;
 	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public int getMoblieNumber() {
-		return moblieNumber;
-	}
-	public void setMoblieNumber(int moblieNumber) {
-		this.moblieNumber = moblieNumber;
-	}
-	public String getStartDate() {
+	public int getStartDate() {
 		return startDate;
 	}
-	public void setStartDate(String startDate) {
+	public void setStartDate(int startDate) {
 		this.startDate = startDate;
 	}
+	public String getNotes() {
+		return notes;
+	}
+	public void setNotes(String notes) {
+		this.notes = notes;
+	}
+
+
+
 	
-   
 
 
 }

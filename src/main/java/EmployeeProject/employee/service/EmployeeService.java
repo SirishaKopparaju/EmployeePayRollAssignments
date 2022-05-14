@@ -25,7 +25,7 @@ public class EmployeeService implements IEmployeeService {
 			
 	    }
 	    public String postMessage(Employee employee) {
-	        return "Hello Employee " + employee.getFirstName() + "" + employee.getLastName() + "!";
+	        return "Hello Employee " + employee.getFullName() + "" + employee.getGender() + "!";
 	    }
 	    public Optional<Employee> findById(int id) {
 
@@ -47,6 +47,13 @@ public class EmployeeService implements IEmployeeService {
 			 repo.deleteById(id);
 		        return "Employee with ID: " + id + " is Deleted Successfully!!";
 		    }
+	
+		public Optional<Employee> editGreetingById(Integer id, String name) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		
 		}
 
 		
