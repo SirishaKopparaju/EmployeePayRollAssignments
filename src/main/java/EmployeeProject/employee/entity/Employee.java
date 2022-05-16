@@ -1,37 +1,33 @@
 package EmployeeProject.employee.entity;
 
+import java.time.LocalDate;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 
 @Entity
-
-
 public class Employee {
 	
 	@Id
 	@GeneratedValue
-	
-	
 	private int id;
 	private String fullName;
-	private String ProfiePic;
+	private String profiePic;
 	private String gender;
 	private String department;
 	private int salary;
-	private int startDate;
+	private LocalDate startDate;
 	private  String notes;
 	
-
-	
-	
 	public Employee(int id, String fullName, String profiePic, String gender, String department, int salary,
-			int startDate, String notes) {
+			LocalDate startDate, String notes) {
+		//yr-mm-dd
 		super();
 		this.id = id;
 		this.fullName = fullName;
-		this.ProfiePic = profiePic;
+		this.profiePic = profiePic;
 		this.gender = gender;
 		this.department = department;
 		this.salary = salary;
@@ -41,6 +37,7 @@ public class Employee {
 	public Employee() {
 		
 	}
+	
 	public Employee(Employee employee) {
 		this.id=employee.id;
         this.department=employee.department;
@@ -48,10 +45,10 @@ public class Employee {
         this.gender=employee.gender;
         this.notes=employee.notes;
         this.salary=employee.salary;
-        this.ProfiePic=employee.ProfiePic;
-        this.startDate=employee.startDate;
-        
+        this.profiePic=employee.profiePic;
+        this.startDate=employee.startDate;    
     }
+	
 	public int getId() {
 		return id;
 	}
@@ -65,10 +62,10 @@ public class Employee {
 		this.fullName = fullName;
 	}
 	public String getProfiePic() {
-		return ProfiePic;
+		return profiePic;
 	}
 	public void setProfiePic(String profiePic) {
-		ProfiePic = profiePic;
+		this.profiePic = profiePic;
 	}
 	public String getGender() {
 		return gender;
@@ -88,10 +85,10 @@ public class Employee {
 	public void setSalary(int salary) {
 		this.salary = salary;
 	}
-	public int getStartDate() {
+	public LocalDate getStartDate() {
 		return startDate;
 	}
-	public void setStartDate(int startDate) {
+	public void setStartDate(LocalDate startDate) {
 		this.startDate = startDate;
 	}
 	public String getNotes() {

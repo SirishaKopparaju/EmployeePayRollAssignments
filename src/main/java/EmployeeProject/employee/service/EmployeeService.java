@@ -24,36 +24,45 @@ public class EmployeeService implements IEmployeeService {
 	        return (Employee) repo.save(emp);
 			
 	    }
-	    public String postMessage(Employee employee) {
-	        return "Hello Employee " + employee.getFullName() + "" + employee.getGender() + "!";
-	    }
+	   
+	    @Override
 	    public Optional<Employee> findById(int id) {
 
 	        return repo.findById(id);
 	    }
+	    
 	    @Override
 	    public List<Employee> getAll() {
 	        return repo.findAll();
 	    }
 	    
 
-
-	    public Optional<Employee> getById(int id) {
-	        return repo.findById(id);
-	        
-	    }
 	   
 		public String deleteById(int id) {
 			 repo.deleteById(id);
 		        return "Employee with ID: " + id + " is Deleted Successfully!!";
 		    }
-	
-		public Optional<Employee> editGreetingById(Integer id, String name) {
+
+		
+
+		@Override
+		public Employee editEmployee(Employee employee, int id) {
+			Employee editEmployee=new Employee(employee);
+			editEmployee.setId(id);
+			repo.save(editEmployee);
+			return editEmployee;
+		}
+
+		@Override
+		public String editEmployee(Employee employee, int id, Object emp) {
 			// TODO Auto-generated method stub
 			return null;
 		}
-
-		
+	
 		}
+	
+	
+		
+		
 
 		

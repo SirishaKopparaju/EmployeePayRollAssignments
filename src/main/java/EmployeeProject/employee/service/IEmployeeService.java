@@ -14,4 +14,11 @@ public interface IEmployeeService {
 
 	List<Employee> getAll();
 
+
+	String deleteById(int id);
+
+	Employee editEmployee(Employee employee, int id);
+
+	String editEmployee(Employee employee, int id, Object emp);
+
 }
