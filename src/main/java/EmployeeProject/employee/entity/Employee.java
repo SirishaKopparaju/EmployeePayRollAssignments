@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import EmployeeProject.employee.dto.EmployeeDTO;
+
 
 @Entity
 public class Employee {
@@ -47,6 +49,26 @@ public class Employee {
         this.salary=employee.salary;
         this.profiePic=employee.profiePic;
         this.startDate=employee.startDate;    
+    }
+	
+	public Employee(int id, EmployeeDTO employeeDTO) {
+        this.id = id;
+        this.fullName = employeeDTO.fullName;
+        this.profiePic = employeeDTO.profiePic;
+        this.gender = employeeDTO.gender;
+        this.department = employeeDTO.department;
+        this.notes = employeeDTO.notes;
+        this.salary = employeeDTO.salary;
+        this.startDate = employeeDTO.startDate;
+    }
+	public Employee(EmployeeDTO employeeDTO) {
+        this.fullName = employeeDTO.fullName;
+        this.profiePic = employeeDTO.profiePic;
+        this.gender = employeeDTO.gender;
+        this.department = employeeDTO.department;
+        this.notes = employeeDTO.notes;
+        this.salary = employeeDTO.salary;
+        this.startDate = employeeDTO.startDate;
     }
 	
 	public int getId() {

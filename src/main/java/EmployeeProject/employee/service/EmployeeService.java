@@ -5,8 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
-
+import EmployeeProject.employee.dto.EmployeeDTO;
 import EmployeeProject.employee.entity.Employee;
 import EmployeeProject.employee.repository.EmployeeRepository;
 
@@ -45,19 +44,20 @@ public class EmployeeService implements IEmployeeService {
 
 		
 
-		@Override
-		public Employee editEmployee(Employee employee, int id) {
-			Employee editEmployee=new Employee(employee);
-			editEmployee.setId(id);
-			repo.save(editEmployee);
-			return editEmployee;
-		}
+		public String editEmployee(EmployeeDTO employeeDTO, int id) {
+	        if (repo.findById(id).isPresent()) {
+	            Employee employee1 = new Employee(id, employeeDTO);
+	           Employee alpha = repo.save(employee1);
+	           return "This is the result"+ alpha;
+	        }
+	        return "No Match";
+	    }
 
-		@Override
-		public String editEmployee(Employee employee, int id, Object emp) {
-			// TODO Auto-generated method stub
-			return null;
-		}
+		
+
+		
+
+		
 	
 		}
 	
