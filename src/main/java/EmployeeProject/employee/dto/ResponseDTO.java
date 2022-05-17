@@ -1,8 +1,11 @@
 package EmployeeProject.employee.dto;
 
+
 import lombok.Data;
+import lombok.ToString;
 
 @Data
+@ToString
 public class ResponseDTO {
 	public ResponseDTO() {
 		super();

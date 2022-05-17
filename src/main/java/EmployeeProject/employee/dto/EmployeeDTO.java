@@ -1,11 +1,12 @@
 package EmployeeProject.employee.dto;
 
 import java.time.LocalDate;
-
 import lombok.Data;
+import lombok.ToString;
 
 
 @Data
+@ToString
 public class EmployeeDTO {
 	public EmployeeDTO() {
 		super();
