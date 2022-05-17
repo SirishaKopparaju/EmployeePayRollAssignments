@@ -26,7 +26,7 @@ import EmployeeProject.employee.service.IEmployeeService;
 public class EmployeeController {
 	//public static final String template = "Hello, %s!";
     
-	/*autowired is a dependency injection*/
+	/*Autowired is a dependency injection*/
 
 	 @Autowired
 	 /*-----created a object service and used interface IEmployeeService-----*/
