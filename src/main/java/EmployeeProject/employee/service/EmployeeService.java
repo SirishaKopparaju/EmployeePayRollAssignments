@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import EmployeeProject.employee.dto.EmployeeDTO;
 import EmployeeProject.employee.entity.Employee;
+import EmployeeProject.employee.exceptionalhandling.ExceptionHandling;
 import EmployeeProject.employee.repository.EmployeeRepository;
 
 
@@ -26,8 +27,10 @@ public class EmployeeService implements IEmployeeService {
 	   
 	    @Override
 	    public Optional<Employee> findById(int id) {
-
-	        return repo.findById(id);
+	    	if (repo.findById(id).isPresent()) {
+	    		 return repo.findById(id);
+	    	}
+			else throw new ExceptionHandling("id is not present in table");
 	    }
 	    
 	    @Override
@@ -38,9 +41,13 @@ public class EmployeeService implements IEmployeeService {
 
 	   
 		public String deleteById(int id) {
+			if (repo.findById(id).isPresent()) {
 			 repo.deleteById(id);
 		        return "Employee with ID: " + id + " is Deleted Successfully!!";
-		    }
+		}
+		else throw new ExceptionHandling("id is not present in table");
+		}
+
 
 		
 
@@ -50,7 +57,7 @@ public class EmployeeService implements IEmployeeService {
 	           Employee alpha = repo.save(employee1);
 	           return "This is the result"+ alpha;
 	        }
-	        return "No Match";
+	        else throw new ExceptionHandling("id is not present in table");
 	    }
 
 		
