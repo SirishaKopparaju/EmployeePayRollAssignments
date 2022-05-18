@@ -2,6 +2,8 @@ package EmployeeProject.employee.controller;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -41,7 +43,7 @@ public class EmployeeController {
 	
 	/*-----------creating employee data using EmployeeDTO-------used add method and PostMapping --New object employee1--*/
 	@PostMapping("/post")
-    public ResponseEntity<ResponseDTO> createEmployees(@RequestBody EmployeeDTO employeeDTO) {
+    public ResponseEntity<ResponseDTO> createEmployees(@Valid @RequestBody EmployeeDTO employeeDTO) {
         Employee employee1 = new Employee(employeeDTO);
         ResponseDTO responseDTO = new ResponseDTO("Employee Created Successfully", service.add(employee1));
         return new ResponseEntity<>(responseDTO, HttpStatus.CREATED);
@@ -71,7 +73,7 @@ public class EmployeeController {
     
     /*-------------------------updating by id------used editEmployee----PutMapping--------------*/
     @PutMapping("update/{id}")
-    public ResponseEntity<ResponseDTO> editEmployee(@RequestBody EmployeeDTO employeeDTO, @PathVariable int id) {
+    public ResponseEntity<ResponseDTO> editEmployee(@Valid @RequestBody EmployeeDTO employeeDTO, @PathVariable int id) {
         ResponseDTO responseDTO = new ResponseDTO("Employee Updated Successfully", service.editEmployee(employeeDTO, id));
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
     }

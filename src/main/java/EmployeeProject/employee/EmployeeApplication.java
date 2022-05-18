@@ -12,7 +12,7 @@ public class EmployeeApplication  {
 	public static void main(String[] args) {
 		SpringApplication.run(EmployeeApplication.class, args);
 		log.info("Logger is Activated!!");
-        System.out.println("Logger 2");
+        System.out.println("Logger");
 
 }
 }
